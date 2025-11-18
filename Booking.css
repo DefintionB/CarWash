@@ -1,0 +1,443 @@
+.booking-wrapper {
+  min-height: 100vh;
+  background: black;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-card h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.price-info {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.discount-info {
+  text-align: center;
+  color: #f39c12;
+  font-weight: bold;
+  background: #fff3cd;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #555;
+  gap: 0.5rem;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="date"] {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.booking-form input[type="text"]:focus,
+.booking-form input[type="date"]:focus {
+  outline: none;
+  border-color: orange;
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.time-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.time-label {
+  font-weight: 600;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.time-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.time-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s;
+  background: white;
+}
+
+.time-radio:hover {
+  border-color: orange;
+  background: #f5f7ff;
+}
+
+.time-radio input[type="radio"] {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.time-radio input[type="radio"]:checked + span {
+  color: orange;
+  font-weight: bold;
+}
+
+.time-radio input[type="radio"]:disabled {
+  cursor: not-allowed;
+}
+
+.time-radio span.taken {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.booking-error {
+  background: #fee;
+  color: #c33;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 4px solid #c33;
+  font-weight: 500;
+}
+
+.booking-submit {
+  padding: 1rem 2rem;
+  background: orange;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.booking-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.booking-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.booking-summary {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.booking-summary h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.booking-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.booking-summary th {
+  background: orange;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.booking-summary td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.booking-summary tr:hover {
+  background: #f9f9f9;
+}
+
+.discount {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.final-price {
+  color: black;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.booking-total {
+  text-align: right;
+  font-size: 1.5rem;
+  color: #333;
+  padding: 1rem;
+  background: #f5f7ff;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.booking-total strong {
+  color: black;
+}
+
+.payment-section {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 15px;
+}
+
+.payment-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.payment-section p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.qr-image {
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 1rem auto;
+}
+
+.file-label {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: 2px dashed #667eea;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  color: black;
+}
+
+.file-label:hover {
+  background: orange;
+  border-color: orange;
+}
+
+.file-label input[type="file"] {
+  display: none;
+}
+
+.file-selected {
+  margin-top: 0.75rem;
+  color: #27ae60;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.upload-btn {
+  margin-top: 1.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.upload-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+.upload-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.view-bookings-btn {
+  margin-top: 1rem;
+  padding: 0.875rem 2rem;
+  background: orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.view-bookings-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* ⭐ ปุ่ม Reset Booking */
+.reset-booking-btn {
+  margin-top: 1rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.reset-booking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+  background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+}
+
+/* ⭐ Customer Discount Banner */
+.customer-discount-banner {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* ⭐ Transfer Info Section */
+.transfer-info-section {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+
+.transfer-info-section h4 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.transfer-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.transfer-label input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  transition: border 0.3s;
+}
+
+.transfer-label input:focus {
+  outline: none;
+  border-color: orange;
+}
+
+.datetime-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .time-row {
+    grid-template-columns: 1fr;
+  }
+
+  .time-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-card {
+    padding: 1.5rem;
+  }
+}
